@@ -1,12 +1,11 @@
 ﻿namespace CSharpObjectOrientedDesign.Classes;
 
-public class Station
+internal class Station
 {
-	public string Name { get; private set; }
+    internal string Name { get; private set; }
 
-	public Station(string name)
-	{
-		Name = name;
-	}
+    internal Station(string name)
+    {
+        Name = name;
+    }
 }
-

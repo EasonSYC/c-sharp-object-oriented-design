@@ -2,17 +2,17 @@
 
 public class System
 {
-    public HashSet<Driver> Drivers { get; private set; }
-    public HashSet<Line> Lines { get; private set; }
-    public HashSet<Train> Trains { get; private set; }
-    public HashSet<Timetable> Timetables { get; private set; }
+    private HashSet<Driver> _drivers;
+    private HashSet<Line> _lines;
+    private HashSet<Train> _trains;
+    private HashSet<Timetable> _timetables;
 
     public System()
     {
-        Drivers = new();
-        Lines = new();
-        Trains = new();
-        Timetables = new();
+        _drivers = new();
+        _lines = new();
+        _trains = new();
+        _timetables = new();
     }
 
     private void PrintTimetable(Timetable timetable)
@@ -22,14 +22,14 @@ public class System
 
     private HashSet<Timetable> QueryDriver(Driver driver)
     {
-        if (!Drivers.Contains(driver))
+        if (!_drivers.Contains(driver))
         {
             throw new ArgumentException($"Driver does not exist: {driver}.");
         }
 
         HashSet<Timetable> retTimetable = new();
 
-        foreach (var item in Timetables)
+        foreach (var item in _timetables)
         {
             if (item.Driver == driver)
             {
@@ -42,14 +42,14 @@ public class System
 
     private HashSet<Timetable> QueryLine(Line line)
     {
-        if (!Lines.Contains(line))
+        if (!_lines.Contains(line))
         {
             throw new ArgumentException($"Line does not exist: {line}.");
         }
 
         HashSet<Timetable> retTimetable = new();
 
-        foreach (var item in Timetables)
+        foreach (var item in _timetables)
         {
             if (item.Line == line)
             {
@@ -62,14 +62,14 @@ public class System
 
     private HashSet<Timetable> QueryTrain(Train train)
     {
-        if (!Trains.Contains(train))
+        if (!_trains.Contains(train))
         {
             throw new ArgumentException($"Train does not exist: {train}.");
         }
 
         HashSet<Timetable> retTimetable = new();
 
-        foreach (var item in Timetables)
+        foreach (var item in _timetables)
         {
             if (item.Train == train)
             {
@@ -84,7 +84,7 @@ public class System
     {
         try
         {
-            Drivers.Add(driver);
+            _drivers.Add(driver);
         }
         catch (Exception e)
         {
@@ -96,7 +96,7 @@ public class System
     {
         if (QueryDriver(driver) == new HashSet<Timetable>())
         {
-            Drivers.Remove(driver);
+            _drivers.Remove(driver);
         }
         else
         {

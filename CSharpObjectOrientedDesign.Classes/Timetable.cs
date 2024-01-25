@@ -1,13 +1,13 @@
 ﻿namespace CSharpObjectOrientedDesign.Classes;
 
-public class Timetable
+internal class Timetable
 {
-	public Line Line { get; private set; }
-	public Train Train { get; private set; }
-	public Driver Driver { get; private set; }
-	public List<Stop> Stops { get; private set; }
+	internal Line Line { get; private set; }
+	internal Train Train { get; private set; }
+	internal Driver Driver { get; private set; }
+	internal List<Stop> Stops { get; private set; }
 
-	public Timetable(Line line, Train train, Driver driver, List<Stop> stops)
+	internal Timetable(Line line, Train train, Driver driver, List<Stop> stops)
 	{
 		Line = line;
 		Train = train;
@@ -15,4 +15,3 @@ public class Timetable
 		Stops = stops;
 	}
 }
-

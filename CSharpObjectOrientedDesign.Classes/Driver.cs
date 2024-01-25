@@ -1,11 +1,11 @@
 ﻿namespace CSharpObjectOrientedDesign.Classes;
 
-public class Driver
+internal class Driver
 {
     private string _firstName;
     private string _lastName;
 
-    public string Name
+    internal string Name
     {
         get
         {
@@ -14,7 +14,7 @@ public class Driver
         private set
         {
             List<string> strList = new(value.Split(' '));
-            if(strList.Count == 2 && strList[0].All(char.IsLetter) && strList[1].All(char.IsLetter))
+            if (strList.Count == 2 && strList[0].All(char.IsLetter) && strList[1].All(char.IsLetter))
             {
                 _firstName = strList[0];
                 _lastName = strList[1];
@@ -29,7 +29,7 @@ public class Driver
     private const int _idLength = 6;
     private string _id;
 
-    public string ID
+    internal string ID
     {
         get
         {
@@ -37,7 +37,7 @@ public class Driver
         }
         private set
         {
-            if(value.All(char.IsDigit) && value.Length == _idLength)
+            if (value.All(char.IsDigit) && value.Length == _idLength)
             {
                 _id = value;
             }
@@ -48,7 +48,7 @@ public class Driver
         }
     }
 
-    public Driver(string name, string id)
+    internal Driver(string name, string id)
     {
         _firstName = "";
         _lastName = "";
@@ -57,4 +57,3 @@ public class Driver
         ID = id;
     }
 }
-

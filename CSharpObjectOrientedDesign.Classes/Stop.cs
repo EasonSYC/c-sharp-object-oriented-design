@@ -1,18 +1,17 @@
 ﻿namespace CSharpObjectOrientedDesign.Classes;
 
-public class Stop
+internal class Stop
 {
-	public Station Station { get; private set; }
-	public bool Passing { get; private set; }
-	public TimeOnly? ArrivalTime { get; private set; }
-	public TimeOnly? DepartureTime { get; private set; }
+    internal Station Station { get; private set; }
+    internal bool Passing { get; private set; }
+    internal TimeOnly? ArrivalTime { get; private set; }
+    internal TimeOnly? DepartureTime { get; private set; }
 
-	public Stop(Station station, bool passing, TimeOnly arrivalTime, TimeOnly departureTime)
-	{
-		Station = station;
-		Passing = passing;
-		ArrivalTime = arrivalTime;
-		DepartureTime = departureTime;
-	}
+    internal Stop(Station station, bool passing, TimeOnly arrivalTime, TimeOnly departureTime)
+    {
+        Station = station;
+        Passing = passing;
+        ArrivalTime = arrivalTime;
+        DepartureTime = departureTime;
+    }
 }
-
